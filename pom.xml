@@ -1,0 +1,17 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <parent>
+        <artifactId>lucene-parent</artifactId>
+        <groupId>com.baizhi</groupId>
+        <version>1.0-RELEASE</version>
+        <relativePath>../lucene-parent/pom.xml</relativePath>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>work</artifactId>
+    <packaging>war</packaging>
+    <name>work Maven Webapp</name>
+    <url>http://maven.apache.org</url>
+    <build>
+        <finalName>work</finalName>
+    </build>
+</project>

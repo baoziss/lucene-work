@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <!--服务应用名-->
+    <dubbo:application name="dubbo-client"/>
+    <!--服务注册中心-->
+    <dubbo:registry address="zookeeper://192.168.13.130:2181"/>
+
+    <dubbo:reference id="userService" interface="com.baizhi.service.UserService"/>
+
+    <!--注册服务-->
+   <!-- <dubbo:reference id="userService1" version="1.0.0"   loadbalance="roundrobin" proxy="jdk" interface="com.baizhi.service.IUserService" >
+       <dubbo:meth od name="queryUserById"  loadbalance="consistenthash" />
+    </dubbo:reference>
+    <dubbo:reference id="userService2" version="1.1.1"   loadbalance="roundrobin" proxy="jdk" interface="com.baizhi.service.IUserService" >
+        <dubbo:method name="queryUserById"  loadbalance="consistenthash" />
+    </dubbo:reference>-->
+
+   <!-- <dubbo:reference interface="com.baizhi.service.IUserService" group="g1" id="userService_g1"/>
+    <dubbo:reference interface="com.baizhi.service.IUserService" group="g2" id="userService_g2"/>
+
+    <dubbo:reference interface="com.baizhi.service.IUserService" group="g1,g2" id="userService_g3">
+        <dubbo:method name="queryHobbies" merger="true"/>
+    </dubbo:reference>-->
+
+    <!--<dubbo:reference timeout="14000" interface="com.baizhi.service.IUserService" id="userService" >
+       &lt;!&ndash; <dubbo:method name="queryHobbies" async="true"/>
+        <dubbo:method name="queryUserById" async="true"/>&ndash;&gt;
+    </dubbo:reference>-->
+
+
+
+</beans>
